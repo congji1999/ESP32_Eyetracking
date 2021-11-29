@@ -421,46 +421,9 @@ static esp_err_t stream_handler(httpd_req_t *req){
                           } 
                         }
                         Serial.printf("%d\n", dark_pixel_count);
-
-                       /* int darkness_threshold = 255;
-                        for(int y=0;y<120;y++) {
-                          for(int x=0;x<160;x++) {
-                            int current_darkness = 
-                            (image_matrix->item[(y*160+x)*3] +
-                            image_matrix->item[(y*160+x)*3+1] +
-                            image_matrix->item[(y*160+x)*3+2]) / 3;
-                            if (current_darkness < darkness_threshold) {
-                              darkness_threshold = current_darkness; 
-                            }
-                          }
-                        }
-                        //Serial.printf("%d\n", darkness_threshold); YK
-
-                        int white_pixel_count = 0;
-                        for(int y=40;y<120;y++) {
-                          for(int x=0;x<60;x++) {
-                            int current_darkness = 
-                            (image_matrix->item[(y*160+x)*3] +
-                            image_matrix->item[(y*160+x)*3+1] +
-                            image_matrix->item[(y*160+x)*3+2]) / 3;
-                            if (current_darkness < darkness_threshold + 5) {
-                              image_matrix->item[(y*160+x)*3]=255;
-                              image_matrix->item[(y*160+x)*3+1]=255;
-                              image_matrix->item[(y*160+x)*3+2]=255;
-                              ++white_pixel_count;
-                            }
-                            else {
-                              image_matrix->item[(y*160+x)*3]=0;
-                              image_matrix->item[(y*160+x)*3+1]=0;
-                              image_matrix->item[(y*160+x)*3+2]=0;
-                            }
-                          } 
-                        }
-                        Serial.printf("%d\n", white_pixel_count);
-                        */
                         
                         // Finite State Machine for Eye Blink Counter
-                       /*
+                       
                         switch (state)
                         {
                           case 1: // determine if eye is open or closed
@@ -503,7 +466,7 @@ static esp_err_t stream_handler(httpd_req_t *req){
                             }
                             break;
                         }
-                        */
+                        
                         fr_ready = esp_timer_get_time();
                         box_array_t *net_boxes = NULL;
                         if(detection_enabled){
